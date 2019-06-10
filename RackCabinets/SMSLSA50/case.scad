@@ -1,5 +1,4 @@
-$fn = 50*1;
-
+include<../sixinch_library.scad>
 
 
 
@@ -11,8 +10,8 @@ $fn = 50*1;
 
 
 
-Part = "-"; // [a:All, b:FrontPlate, c:Cabinet, d:Lid, e:BackPlate, f:Handles]
-Units = 4;
+Part = "-"; // [a:All, b:FrontPlate, b2:FrontPlate2, c:Cabinet, d:Lid, e:BackPlate, f:Handles]
+Units = 5;
 Depth = 115;
 
 go();
@@ -22,15 +21,21 @@ module go(){
         if(Part=="a"){
             frontplate(Units,[],[],[],[Units/2],[45],[45]);
             cabinet(Depth,Units,[45],[],[Units/2]);
-            lid(Depth,Units,[45],[45]);        
+            lid(Depth,Units,[45],[45]);
             back_plate(Units,Depth,[45],[45],[Units/2],[],[]);
-            handle(Units,false);   
+            handle(Units,false);
         }else if(Part=="b"){
-            frontplate(Units,[],[],[],[Units/2],[45],[45]);
+            lower() {
+                 frontplate(Units,[],[],[],[Units/2],[45],[45]);
+            }
+        }else if(Part=="b2"){
+            upper() {
+                 frontplate(Units,[],[],[],[Units/2],[45],[45]);
+            }
         }else if(Part=="c"){
             cabinet(Depth,Units,[45],[],[Units/2]);
         }else if(Part=="d"){
-            lid(Depth,Units,[45],[45]); 
+            lid(Depth,Units,[45],[45]);
         }else if(Part=="e"){
             back_plate(Units,Depth,[45],[45],[Units/2],[],[]);
         }else if(Part=="f"){
@@ -39,14 +44,34 @@ module go(){
     }
 }
 
+module lower () {
+   difference() {
+        children();
+        rotate([-90,90,0]){
+             translate([-117, -120, -20]) {
+                  cube([117.5, 87.8, 37 ]);
+             }
+        }
+   }
+}
 
-
-
-
-
-
-
-
-
-
-
+module upper () {
+   difference() {
+        intersection() {
+             children();
+             rotate([-90,90,0]) {
+                  translate([-117, -120, -20]) {
+                       cube([117.5, 87.8, 37 ]);
+                  }
+             }
+        }
+   }
+   rotate([-90,90,0]) {
+        translate([-6, -36, 2]) {
+             cube([3, 8, 14]);
+        }
+        translate([-6, -124, 2]) {
+             cube([3, 8, 14]);
+        }
+   }
+}
