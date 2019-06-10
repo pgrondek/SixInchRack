@@ -58,7 +58,6 @@ if(print_cabinet_sml){ // Cabinet //
                         }
                    }
               }
-
               hull() {
                    rotate(a=90, v=[0, 1, 0]) {
                         translate([-45.5, 50, 10]) {
@@ -84,15 +83,12 @@ if(print_lid){ // Lid //
     lid(98,3,screw_front,screw_back);
 
     translate([65, 21, 12]) {
-         color("green") {
-              cube([40, 20, 5]);
-         }
+         cube([40, 20, 5]);
     }
     translate([65, 21, 71]) {
-         color("green") {
-              cube([40, 20, 5]);
-         }
+         cube([40, 20, 5]);
     }
+
 }
 
 if(print_rear){  // Back plate //
