@@ -1,5 +1,16 @@
 include<../sixinch_library.scad>
 
+/* debug = false; */
+/* if (debug) { */
+/*      $fn = 16; */
+/*      translate([85.5, 4, 54]) { */
+/*           rotate(a=[-90, -90, 0]) { */
+/*                color("red") { */
+/*                     import("../../../Open_SCAD_Raspberry_PI3_model/files/Pi3HifiBerry.stl"); */
+/*                } */
+/*           } */
+/*      } */
+/* } */
 
   ///////////////////////////////
  // Raspberry Pi 3 Model B    //
