@@ -18,9 +18,11 @@ include<../sixinch_library.scad>
 
 print_frontplate_sml = false;
 print_handle_sml     = false;
-print_cabinet_sml    = false;
+print_cabinet_sml    = true;
 print_lid            = false;
-print_rear           = true;
+print_rear           = false;
+
+remove = true;
 
 if(print_frontplate_sml){ // Frontplate //
     square_hole        = [];

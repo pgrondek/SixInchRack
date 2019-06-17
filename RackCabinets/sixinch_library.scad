@@ -177,6 +177,11 @@ module cabinet (dp,u,screw_bottom_front,round_peg,screw_side_front){
 
 
 module box(dp,u,screw_bottom_front,round_peg,screw_side_front){
+
+
+difference(){
+    union() {
+
     difference(){
         translate([20,0,gauge]){
             difference(){
@@ -243,10 +248,37 @@ module box(dp,u,screw_bottom_front,round_peg,screw_side_front){
                 od = round_peg[i][2];
                 id = round_peg[i][3];
                 he = round_peg[i][4];
-                translate([x,0,y]){peg(0,0,od,id,he); }
+                translate([x,0,y]){peg(0,0,od,id,he);}
              }
         }
     }
+
+
+}
+    translate([20+gauge_box,0,gauge]){
+        if(len(round_peg)>0){
+            for(i=[0:len(round_peg)-1]){
+                x = round_peg[i][0];
+                y = round_peg[i][1];
+                od = round_peg[i][2];
+                id = round_peg[i][3];
+                he = round_peg[i][4];
+
+                translate([x,5,y]){
+                     color("red") {
+                          rotate([90, 0, 0]) {
+                               cylinder(h=4,r=1.5);
+                          }
+                     }
+                }
+             }
+        }
+    }
+
+
+
+}
+
 }
 
 
@@ -286,7 +318,9 @@ module lid(dp,u,screw_front,screw_back){
     translate([sixinch-20-gauge_box-4,unit*u +0.01  ,gauge+dp-10-10+10-5]){rotate([90,0,0]){screw();}}
     if(dp>90){
         translate([sixinch-20-gauge_box-4,unit*u+0.01   ,gauge+dp/2-5+10-5]){rotate([90,0,0]){screw();}}
-        translate([20+gauge_box+4,unit*u+0.01   ,gauge+dp/2-5+5]){rotate([90,0,0]){screw();}}
+        if(!remove){
+             translate([20+gauge_box+4,unit*u+0.01   ,gauge+dp/2-5+5]){rotate([90,0,0]){screw();}}
+        }
     }
      chimney();
 
