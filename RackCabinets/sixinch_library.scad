@@ -178,9 +178,9 @@ module cabinet (dp,u,screw_bottom_front,round_peg,screw_side_front){
 
 module box(dp,u,screw_bottom_front,round_peg,screw_side_front){
 
-
-difference(){
-    union() {
+/* RaspberryPi3ModelBHifiBerry */
+/* difference(){ */
+/*     union() { */
 
     difference(){
         translate([20,0,gauge]){
@@ -253,34 +253,30 @@ difference(){
         }
     }
 
+/* RaspberryPi3ModelBHifiBerry */
+/* } */
+/*     translate([20+gauge_box,0,gauge]){ */
+/*         if(len(round_peg)>0){ */
+/*             for(i=[0:len(round_peg)-1]){ */
+/*                 x = round_peg[i][0]; */
+/*                 y = round_peg[i][1]; */
+/*                 od = round_peg[i][2]; */
+/*                 id = round_peg[i][3]; */
+/*                 he = round_peg[i][4]; */
+
+/*                 translate([x,5,y]){ */
+/*                      color("red") { */
+/*                           rotate([90, 0, 0]) { */
+/*                                cylinder(h=4,r=1.5); */
+/*                           } */
+/*                      } */
+/*                 } */
+/*              } */
+/*         } */
+/*     } */
+/* } */
 
 }
-    translate([20+gauge_box,0,gauge]){
-        if(len(round_peg)>0){
-            for(i=[0:len(round_peg)-1]){
-                x = round_peg[i][0];
-                y = round_peg[i][1];
-                od = round_peg[i][2];
-                id = round_peg[i][3];
-                he = round_peg[i][4];
-
-                translate([x,5,y]){
-                     color("red") {
-                          rotate([90, 0, 0]) {
-                               cylinder(h=4,r=1.5);
-                          }
-                     }
-                }
-             }
-        }
-    }
-
-
-
-}
-
-}
-
 
 module lid(dp,u,screw_front,screw_back){
 
