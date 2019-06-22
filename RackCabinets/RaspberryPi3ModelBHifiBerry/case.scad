@@ -18,9 +18,9 @@ include<../sixinch_library.scad>
 
 print_frontplate_sml = false;
 print_handle_sml     = false;
-print_cabinet_sml    = true;
+print_cabinet_sml    = false;
 print_lid            = false;
-print_rear           = false;
+print_rear           = true;
 
 remove = true;
 
@@ -105,8 +105,8 @@ if(print_lid){ // Lid //
 }
 
 if(print_rear){  // Back plate //
-    square_hole  = [[37 ,3, 17, 15] , [57 ,4, 15, 16] , [75,4,15,16] ];
-    round_hole   = [[6,5,6],[6,1,6], [24,3.5,3.5],[24,1.2,3.5]  ,[30,3.5,3.5],[30,1.2,3.5]];
+    square_hole  = [[37, 5, 17, 15] , [57, 6, 15, 16] , [75, 6, 15, 16] ];
+    round_hole   = [[6,5,6],[6,1,6], [24,3.5,3.5], [24,1.2,3.5]  ,[30,3.5,3.5], [30,1.2,3.5]];
     screw_top    = [36];//mm
     screw_bottom = [36];//mm
     screw_side   = [];
