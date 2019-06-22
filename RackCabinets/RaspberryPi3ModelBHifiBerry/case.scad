@@ -95,11 +95,11 @@ if(print_lid){ // Lid //
     screw_back  = [36];//mm
     lid(98,3,screw_front,screw_back);
 
-    translate([65, 21, 12]) {
-         cube([40, 20, 5]);
+    translate([65, 20.5, 12]) {
+         cube([40, 21.5, 5]);
     }
-    translate([65, 21, 71]) {
-         cube([40, 20, 5]);
+    translate([65, 20.5, 71]) {
+         cube([40, 21.5, 5]);
     }
 
 }
