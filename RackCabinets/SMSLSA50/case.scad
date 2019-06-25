@@ -19,7 +19,7 @@ sa50_length = 117.5;
 sa50_height = 36.6;
 sa50_width = 87.8;
 
-Part = "b"; // [a:All, b:FrontPlate, b2:FrontPlate2, c:Cabinet, d:Lid, e:BackPlate, f:Handles]
+Part = "a"; // [a:All, b:FrontPlate, b2:FrontPlate2, c:Cabinet, d:Lid, e:BackPlate, f:Handles]
 Units = 5;
 Depth = sa50_length;
 
@@ -169,8 +169,8 @@ module cabinet_supported () {
                          }
                     }
                     translate([((sixinch - sa50_width) / 2) + 5 + 10, 20, sa50_length - 13]) {
-                         rotate([90, 0, 0]) {color("red"){
-                                   cylinder(h=8, r=5.5);}
+                         rotate([90, 0, 0]) {
+                              cylinder(h=8, r=5.5);
                          }
                     }
                }
@@ -182,8 +182,8 @@ module cabinet_supported () {
                          }
                     }
                     translate([((sixinch - sa50_width) / 2) + sa50_width - 5 - 10, 20, sa50_length - 13]) {
-                         rotate([90, 0, 0]) {color("red"){
-                                   cylinder(h=8, r=5.5);}
+                         rotate([90, 0, 0]) {
+                              cylinder(h=8, r=5.5);
                          }
                     }
                }
