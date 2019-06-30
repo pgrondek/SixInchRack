@@ -16,8 +16,8 @@ if (debug) {
 
 
 sa50_length = 117.5;
-sa50_height = 36.6;
-sa50_width = 87.8;
+sa50_height = 38;
+sa50_width = 88;
 
 Part = "a"; // [a:All, b:FrontPlate, b2:FrontPlate2, c:Cabinet, d:Lid, e:BackPlate, f:Handles]
 Units = 5;
