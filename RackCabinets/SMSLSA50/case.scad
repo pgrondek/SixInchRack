@@ -144,34 +144,34 @@ module cabinet_supported () {
 
      difference () {
           union () {
-               translate([(sixinch - sa50_width) / 2, 20, (sa50_length / 2) - 45]) {
+               translate([(sixinch - sa50_width) / 2, 25, (sa50_length / 2) - 45]) {
                     rotate([90, 0, 0]) {
-                         cylinder(h=20, r=5);
+                         cylinder(h=25, r=5);
                     }
                }
-               translate([((sixinch - sa50_width) / 2) + sa50_width, 20, (sa50_length / 2) - 45]) {
+               translate([((sixinch - sa50_width) / 2) + sa50_width, 25, (sa50_length / 2) - 45]) {
                     rotate([90, 0, 0]) {
-                         cylinder(h=20, r=5);
+                         cylinder(h=25, r=5);
                     }
                }
-               translate([(sixinch - sa50_width) / 2, 20, (sa50_length / 2)]) {
+               translate([(sixinch - sa50_width) / 2, 25, (sa50_length / 2)]) {
                     rotate([90, 0, 0]) {
-                         cylinder(h=20, r=5);
+                         cylinder(h=25, r=5);
                     }
                }
-               translate([((sixinch - sa50_width) / 2) + sa50_width, 20, (sa50_length / 2)]) {
+               translate([((sixinch - sa50_width) / 2) + sa50_width, 25, (sa50_length / 2)]) {
                     rotate([90, 0, 0]) {
-                         cylinder(h=20, r=5);
+                         cylinder(h=25, r=5);
                     }
                }
 
                difference () {
-                    translate([((sixinch - sa50_width) / 2) + 15, 20, sa50_length - 13 - 5]) {
+                    translate([((sixinch - sa50_width) / 2) + 5 + 10, 20, sa50_length - 12 - 5]) {
                          rotate([90, 0, 0]) {
                               cylinder(h=20, r=5 + 2);
                          }
                     }
-                    translate([((sixinch - sa50_width) / 2) + 5 + 10, 20, sa50_length - 13]) {
+                    translate([((sixinch - sa50_width) / 2) + 5 + 10, 20, sa50_length - 12]) {
                          rotate([90, 0, 0]) {
                               cylinder(h=8, r=5.5);
                          }
