@@ -548,8 +548,12 @@ module frontplate(u,square_hole,round_hole,round_peg,screw_side_front,screw_top,
 
     //cabinet support bars
     translate([0,0,gauge]){
-        translate([20+width*0.25,gauge_box,0]){  cube([width*0.5,1,1.5]);  }
-        translate([20+width*0.25,unit*u-1-gauge_box,0]){  cube([width*0.5,1,1.5]);  }
+        /* translate([20+width*0.25,gauge_box,0]){  cube([width*0.5,1,1.5]);  } */
+        /* translate([20+width*0.25,unit*u-1-gauge_box,0]){  cube([width*0.5,1,1.5]);  } */
+        /* FIXME: */
+        translate([25+width*0.25,gauge_box,0]){  cube([width*0.5-12.5,1,1.5]);  }
+        translate([25+width*0.25,unit*u-1-gauge_box,0]){  cube([width*0.5-12.5,1,1.5]);  }
+
     }
 
 
