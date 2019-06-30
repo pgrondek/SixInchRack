@@ -15,31 +15,25 @@ if (debug) {
 //////////////////////////////////////////////////
 
 
-AnkerPowerPort5_length = 90.1;
-AnkerPowerPort5_height = 26.1;
-AnkerPowerPort5_width = 57.5;
+AnkerPowerPort5_length = 90;
+AnkerPowerPort5_height = 27;
+AnkerPowerPort5_width = 58;
 AnkerPowerPort5_powerdepth = 50;
-usb_padding  = 9;
 
 Part = "a"; // [a:All, b:FrontPlate, c:Cabinet, d:Lid, e:BackPlate, f:Handles]
 Units = 3;
 Depth = AnkerPowerPort5_length + AnkerPowerPort5_powerdepth;
 
-/* xoffset = (width - AnkerPowerPort5_width) / 2; */
-/* yoffset = ((Units * unit) - AnkerPowerPort5_height) / 2; */
-/* round_holes = [[xoffset + 15, yoffset + 16, 10], [xoffset + 15, yoffset + 30, 10], */
-/*                [xoffset + 38.5, yoffset + 12, 13], [xoffset + 38.5, yoffset + 28, 13], */
-/*                [xoffset + 57, yoffset + 12, 13], [xoffset+ 57, yoffset + 28, 13], */
-/*                [xoffset + 76, yoffset + 15.5, 7]]; */
+xoffset = ((width - AnkerPowerPort5_width) / 2) - 2;
+yoffset = (((Units * unit) - AnkerPowerPort5_height) / 2) - 2;
 round_holes = [[6, 9, 6],
                [6, 5, 6],
                [6, 1, 6]];
-square_holes = [[29, usb_padding, 6, 14],
-                [29+(1*10), usb_padding, 6, 14],
-                [29+(2*10), usb_padding, 6, 14],
-                [29+(3*10), usb_padding, 6, 14],
-                [29+(4*10), usb_padding, 6, 14],
-                [29+(5*10) ,usb_padding, 6, 14]];
+square_holes = [[xoffset + 5.5, yoffset + 6, 6, 14],
+                [xoffset + 5.5 +(1*10), yoffset + 6, 6, 14],
+                [xoffset + 5.5 +(2*10), yoffset + 6, 6, 14],
+                [xoffset + 5.5 +(3*10), yoffset + 6, 6, 14],
+                [xoffset + 5.5 +(4*10), yoffset + 6, 6, 14]];
 
 go();
 
