@@ -179,12 +179,12 @@ module cabinet_supported () {
                }
 
                difference () {
-                    translate([((sixinch - sa50_width) / 2) + sa50_width - 5 - 10, 20, sa50_length - 13 - 5]) {
+                    translate([((sixinch - sa50_width) / 2) + sa50_width - 5 - 10, 20, sa50_length - 12 - 5]) {
                          rotate([90, 0, 0]) {
                               cylinder(h=20, r=5 + 2);
                          }
                     }
-                    translate([((sixinch - sa50_width) / 2) + sa50_width - 5 - 10, 20, sa50_length - 13]) {
+                    translate([((sixinch - sa50_width) / 2) + sa50_width - 5 - 10, 20, sa50_length - 12]) {
                          rotate([90, 0, 0]) {
                               cylinder(h=8, r=5.5);
                          }
