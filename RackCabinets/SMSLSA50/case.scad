@@ -104,15 +104,11 @@ module upper () {
           }
      }
      rotate([-90,90,0]) {
-          /* translate([-6, -36, 2]) { */
-          /* (width - sa50_width / 2) + 5 */
           translate([-6, -(width - sa50_width + 10), 2]) {
-          /* translate([-6, -(width - sa50_width / 2), 2]) { */
-               cube([3, 8, 14]);
+               cube([3, 8, 12]);
           }
-          /* translate([-6, -126, 2]) { */
           translate([-6, - width - 10, 2]) {
-               cube([3, 8, 14]);
+               cube([3, 8, 12]);
           }
      }
 }
