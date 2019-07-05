@@ -87,7 +87,7 @@ module lower () {
              sa50();
         }
         rotate([0, 90, 90]){
-             translate([0, 0, -sa50_height + 1]) {
+             translate([0, 0, -sa50_height]) {
                   sa50();
              }
         }
@@ -98,7 +98,7 @@ module upper () {
      intersection() {
           children();
           rotate([0, 90, 90]){
-               translate([0, 0, -sa50_height + 1]) {
+               translate([0, 0, -sa50_height]) {
                     sa50();
                }
           }
