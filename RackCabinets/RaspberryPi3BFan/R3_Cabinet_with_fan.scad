@@ -10,7 +10,7 @@ if(print_cabinet_sml){ // Cabinet //
     w=88;
     h=70;
     
-    pole=2.55;
+    pole=2.52;
     height=8;
     
     screw_bottom_front = [36];
