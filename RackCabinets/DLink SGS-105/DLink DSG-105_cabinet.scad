@@ -7,9 +7,9 @@ include<../sixinch_library.scad>
 
 print_frontplate_sml = false;
 print_handle_sml     = false;
-print_cabinet_sml    = true;
+print_cabinet_sml    = false;
 print_lid            = false;
-print_rear           = false;
+print_rear           = true;
 model                = false;
 
 units = 3;
@@ -71,7 +71,7 @@ if(print_lid){ // Lid //
 }
 
 if(print_rear){  // Back plate //    
-    square_hole  = [[15, 13, 75, 13]];
+    square_hole  = [[17, 15, 82, 14]];
     round_hole   = [[6,5,6],[6,1,6]];
     screw_top    = [36];//mm
     screw_bottom = [36];//mm
@@ -88,7 +88,7 @@ if(model) {
         union(){
          color([1,1,1]) cube([100, 98.5, 28.5]);    // D-Link DGS-105 model
         }
-        translate([12, -1, 7.2]) color([0,0,0]) cube([75, 16, 13]);       // RJ45 ports
+        translate([12, -1, 8]) color([0.5, 0.5, 0.5]) cube([82, 16, 14]);       // RJ45 ports
       }
   }
 }
