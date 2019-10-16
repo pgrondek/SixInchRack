@@ -34,7 +34,7 @@ if(print_handle_sml){ // Handle //
 if(print_cabinet_sml){ // Cabinet //  
     w=88;
     h=70;
-    screw_bottom_front = [36];
+    screw_bottom_front = [];
     screw_side_front   = [];
     round_peg          = [
         [20,  50, 15, 0, 15],  // Pillar in front
@@ -52,7 +52,7 @@ if(print_cabinet_sml){ // Cabinet //
     difference() {
         cabinet(depth,units,screw_bottom_front,round_peg,screw_side_front);
         rotate([-90,0,0]){
-            translate([27.5, -156, 8])
+            translate([27.5, -156, 4])
                 cube([100, 98.5, 28.5]);    // D-Link DGS-105 model
           }
     }
@@ -64,17 +64,17 @@ if(print_lid){ // Lid //
     difference () {
         lid(depth, units, screw_front, screw_back);        
         rotate([-90,0,0]){
-            translate([27.5, -156, 8])
+            translate([27.5, -156, 4])
                 cube([100, 98.5, 28.5]);    // D-Link DGS-105 model
         }
     }
 }
 
 if(print_rear){  // Back plate //    
-    square_hole  = [[17, 15, 82, 14]];
+    square_hole  = [[17, 11, 82, 14]];
     round_hole   = [[6,5,6],[6,1,6]];
     screw_top    = [36];//mm
-    screw_bottom = [36];//mm
+    screw_bottom = [];//mm
     screw_side   = [];
     back_plate(units, depth, screw_top, screw_bottom, screw_side, square_hole,round_hole);
 }  
@@ -83,7 +83,7 @@ if(print_rear){  // Back plate //
 // D-Link DGS-105 model
 if(model) {
   rotate([-90,0,0]){
-    translate([27.5, -156, 8])
+    translate([27.5, -156, 4])
       difference(){
         union(){
          color([1,1,1]) cube([100, 98.5, 28.5]);    // D-Link DGS-105 model
