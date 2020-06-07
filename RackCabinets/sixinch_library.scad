@@ -155,9 +155,9 @@ module nuttrap(){
 
 
 
-module cabinet (dp,u,screw_bottom_front,round_peg,screw_side_front){
+module cabinet (dp,u,screw_bottom_front,round_peg,screw_side_front, remove_middle=false){
     difference(){
-        box(dp,u,screw_bottom_front,round_peg,screw_side_front);
+        box(dp,u,screw_bottom_front,round_peg,screw_side_front, remove_middle);
 
                translate([20,unit/2+3,sixinch-40]){ cylinder(d=gauge_box,h=41);}
                translate([20,unit/2+0,sixinch-40]){ cylinder(d=gauge_box,h=41);}
@@ -176,7 +176,7 @@ module cabinet (dp,u,screw_bottom_front,round_peg,screw_side_front){
 
 
 
-module box(dp,u,screw_bottom_front,round_peg,screw_side_front){
+module box(dp,u,screw_bottom_front,round_peg,screw_side_front, remove_middle){
 
 /* RaspberryPi3ModelBHifiBerry */
 /* difference(){ */
@@ -218,7 +218,7 @@ module box(dp,u,screw_bottom_front,round_peg,screw_side_front){
     translate([20+gauge_box,unit*u-gauge_box,gauge+dp-10-10]){rotate([0,0,-90]){screwtrap();}}
     translate([sixinch-20-gauge_box,unit*u-gauge_box,gauge+10+10]){rotate([180,0,-90]){screwtrap();}}
     translate([sixinch-20-gauge_box,unit*u-gauge_box,gauge+dp-10-10+10]){rotate([180,0,-90]){screwtrap();}}
-    if(dp>90){
+    if(dp>90 && !remove_middle){
         translate([sixinch-20-gauge_box,unit*u-gauge_box,gauge+dp/2-5+10]){rotate([180,0,-90]){screwtrap();}}
         translate([20+gauge_box,unit*u-gauge_box,gauge+dp/2-5]){rotate([0,0,-90]){screwtrap();}}
     }
@@ -278,8 +278,8 @@ module box(dp,u,screw_bottom_front,round_peg,screw_side_front){
 
 }
 
-module lid(dp,u,screw_front,screw_back){
-
+module lid(dp,u,screw_front,screw_back, remove_middle=false){
+    
     difference(){
     union(){
         if(len(screw_front)>0){
@@ -313,9 +313,9 @@ module lid(dp,u,screw_front,screw_back){
     translate([sixinch-20-gauge_box-4,unit*u+0.01   ,gauge+10+10-5]){rotate([90,0,0]){screw();}}
     translate([sixinch-20-gauge_box-4,unit*u +0.01  ,gauge+dp-10-10+10-5]){rotate([90,0,0]){screw();}}
     if(dp>90){
-        translate([sixinch-20-gauge_box-4,unit*u+0.01   ,gauge+dp/2-5+10-5]){rotate([90,0,0]){screw();}}
-        if(!remove){
-             translate([20+gauge_box+4,unit*u+0.01   ,gauge+dp/2-5+5]){rotate([90,0,0]){screw();}}
+        if(!remove_middle){
+            translate([sixinch-20-gauge_box-4,unit*u+0.01   ,gauge+dp/2-5+10-5]){rotate([90,0,0]){screw();}}
+            translate([20+gauge_box+4,unit*u+0.01   ,gauge+dp/2-5+5]){rotate([90,0,0]){screw();}}
         }
     }
      chimney();
