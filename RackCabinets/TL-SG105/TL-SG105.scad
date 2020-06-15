@@ -1,4 +1,4 @@
-include<sixinch_library.scad>
+include<../sixinch_library.scad>
 
 //
 
