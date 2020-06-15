@@ -3,7 +3,7 @@ $fn = 50*1;
 
 //Constants, do not change !
 sixinch   = 155*1;       // cm = 6"
-width     = 155-20-20;   // 11.5cm between rails
+width     = sixinch-20-20;   // 11.5cm between rails
 unit      = (44.5/19)*6; // 1U
 gauge     = 3*1;
 gauge_box = 2*1;
@@ -185,8 +185,9 @@ module box(dp,u,screw_bottom_front,round_peg,screw_side_front, remove_middle){
     difference(){
         translate([20,0,gauge]){
             difference(){
-                cube([115,u*unit,dp]);
-                translate([gauge_box,gauge_box,-1]){ cube([115-gauge_box*2,u*unit,dp+2]);}
+                cube_width = sixinch - 40;
+                cube([cube_width,u*unit,dp]);
+                translate([gauge_box,gauge_box,-1]){ cube([cube_width-gauge_box*2,u*unit,dp+2]);}
             }
         }
         //CHIMNEY
@@ -298,8 +299,9 @@ module lid(dp,u,screw_front,screw_back, remove_middle=false){
         }
 
         //lid
+        cube_width = sixinch - 40;
         translate([20+gauge_box+slip,u*unit-gauge_box,gauge]){
-            cube([115-gauge_box*2-slip*2,gauge_box,dp]);
+            cube([cube_width-gauge_box*2-slip*2,gauge_box,dp]);
         }
         //back rest
         translate([sixinch/2-40,u*unit-gauge_box-2,gauge+dp-2-gauge_box]){
